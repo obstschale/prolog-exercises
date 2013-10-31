@@ -29,8 +29,9 @@ mul(X,Y,Z):-successor(A,Y),mul(X,A,B),add(X,B,Z).
 eq(X,X).
 gt(X,Y):-predecessor(X,A),sub(A,Y,B),eq(B,B).
 lt(X,Y):-gt(Y,X).
-neq(X,Y):-sub(X,Y,A),gt(A,zero).
-neq(X,Y):-sub(Y,X,A),gt(A,zero).
+%% neq(X,Y):-sub(X,Y,A),gt(A,zero).
+%% neq(X,Y):-sub(Y,X,A),gt(A,zero).
+neq(X,Y):-gt(X,Y);lt(X,Y).
 /** return max of two number
   * check if x>y
   * check if y>x
