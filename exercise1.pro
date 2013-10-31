@@ -37,9 +37,9 @@ neq(X,Y):-gt(X,Y);lt(X,Y).
   * check if y>x
   * check if x=y
   */
-max(X,Y):-gt(X,Y),write(X).
-max(X,Y):-gt(Y,X),write(Y).
-max(X,Y):-eq(X,Y),write(X).
+max(X,Y,X):-gt(X,Y).
+max(X,Y,Y):-gt(Y,X).
+max(X,X,X).
 
 /* divison of integer */
 div(X,X,one).
