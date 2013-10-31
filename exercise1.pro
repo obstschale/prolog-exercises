@@ -20,8 +20,8 @@ add(X,Y,Z):-successor(A,Y),add(X,A,B),successor(B,Z).
 sub(Z,Y,X):-add(X,Y,Z).
 
 /* multiplication */
-mul(X,zero,zero).
-mul(X,one,X).
+%% mul(X,one,X).
+mul(_,zero,zero).
 mul(X,Y,Z):-successor(A,Y),mul(X,A,B),add(X,B,Z).
 
 /* relations: =, >, <, not = */
@@ -30,6 +30,14 @@ gt(X,Y):-sub(X,one,A),sub(A,Y,B),eq(B,B).
 lt(X,Y):-gt(Y,X).
 neq(X,Y):-sub(X,Y,A),gt(A,zero).
 neq(X,Y):-sub(Y,X,A),gt(A,zero).
+/** return max of two number
+  * check if x>y
+  * check if y>x
+  * check if x=y
+  */
+max(X,Y):-gt(X,Y),write(X).
+max(X,Y):-gt(Y,X),write(Y).
+max(X,Y):-eq(X,Y),write(X).
 
 /* divison of integer */
 div(X,X,one).
@@ -38,3 +46,15 @@ div(X,X,one).
   * using successor()
   */
 div(X,Y,Z):-sub(X,Y,A),div(A,Y,B),successor(B,Z).
+
+/* module */
+mod(X,X,zero).
+mod(_,one,zero).
+mod(X,Y,Z):-gt(Y,X),sub(Y,X,Z).
+mod(X,Y,zero):-lt(Y,X),div(X,Y,_).
+mod(X,Y,Z):-
+	lt(Y,X),
+	predecessor(X,A),
+	mod(A,Y,B),
+	successor(B,Z),
+	lt(Z,Y).
