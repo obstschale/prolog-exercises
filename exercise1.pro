@@ -48,6 +48,19 @@ div(X,X,one).
 div(X,Y,Z):-sub(X,Y,A),div(A,Y,B),successor(B,Z).
 
 /* module */
+/**
+ * fact is that if X mod X -> zero
+ * fact is that anything mod 1 -> zero
+ * then we have to consider 3 cases
+ *   1. Y > X
+ *     if true -> it is always the difference
+ *   2. X < Y
+ *     two sub cases
+ *     a. it is divisible by Y
+ *     b. it is not divisible by Y
+ *       -> by what do we have to decrement X that X/Y is possible?
+ *       -> second fact: Z is always smaller than Y
+ */
 mod(X,X,zero).
 mod(_,one,zero).
 mod(X,Y,Z):-gt(Y,X),sub(Y,X,Z).

@@ -1,6 +1,7 @@
 # Prolog Exercises
 
 - 24th October 2013 - Exercise 1
+- 31st October 2013 - Exercise 1 (cont.)
 
 ---
 #### Examples (examples.pro)
