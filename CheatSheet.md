@@ -8,6 +8,20 @@ A fact (aka exiting rule) is something that is true and we know. E.g. X * 1 is a
 
 	multiplication(X,one,X).
 
+#### Lists in Prolog
+
+Lists in Prolog are part of your universe. `[s|t]` defines a list with the element `s` in the front and the tail list `t`.
+`[s1, s2, .. , sn]` is a list of n elements.
+
+	%% return first element of a list
+	first([X|_],X).
+
+	%% return tail
+	tail([_|Y],Y).
+
+	%% last element
+	last().
+
 #### Comments
 
 Comments in prolog are like (multi-line) comments in C

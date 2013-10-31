@@ -3,6 +3,7 @@
 - 24th October 2013 - Exercise 1
 - 31st October 2013 - Exercise 1 (cont.)
 - 31st October 2013 - Factorial
+- 31st October 2013 - Lists
 
 ---
 #### Examples (examples.pro)
@@ -40,5 +41,13 @@ If `X > 1` we call `fac` recursively and multiply the result with X.
 		A is X-1,
 		fac(A,B),
 		Z is X*B.
+
+#### Lists (lists.pro)
+
+A prolog program to experiment with lists.
+
+1. show first element of list
+2. show tail of list
+3. show last element of list using recursion
 
 ---
