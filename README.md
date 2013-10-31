@@ -3,8 +3,10 @@
 - 24th October 2013 - Exercise 1
 
 ---
+#### Examples (examples.pro)
+A simple file to show the syntax of prolog.
 
-#### Exercise 1 (exercise1.pl)
+#### Exercise 1 (exercise1.pro)
 This exercise has multiple tasks:
 
 * introduce ten digits by using `successor` and `predecessor` relationships
@@ -17,6 +19,8 @@ This exercise has multiple tasks:
 	* greater than >
 	* less than <
 	* not equal ¬=
+	* max - the greater of two numerals
 * introduce division
+* introduce module
 
 ---
